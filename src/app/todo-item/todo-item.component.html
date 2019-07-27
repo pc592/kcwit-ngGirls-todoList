@@ -1,0 +1,24 @@
+<div class="todo-item">
+  <input
+    type="checkbox"
+    class="todo-checkbox"
+    (click)="completeItem()"
+    [checked]="item.completed"
+  />
+  <span
+    class="todo-title"
+    [ngClass]="{'todo-complete': item.completed}"
+    [contentEditable]="true"
+    (keydown.enter)="editItem($event.target.innerText)"
+    (blur)="editItem($event.target.innerText)"
+    (keydown.escape)="editItem('')"
+  >
+    {{ item.title }}
+  </span>
+  <button
+    class="btn btn-red todo-remove"
+    (click)="removeItem()"
+  >
+    remove
+  </button>
+</div>

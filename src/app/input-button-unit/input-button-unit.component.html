@@ -1,0 +1,14 @@
+<div class="todo-new">
+  <input
+    class="todo-input"
+    #inputElementRef
+    [placeholder]="placeholderText"
+    (keyup.enter)="submitValue($event.target.value)"
+  >
+  <button
+    class="btn btn-teal todo-save"
+    (click)="submitValue(inputElementRef.value)"
+  >
+    save
+  </button>
+</div>
